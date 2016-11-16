@@ -1,0 +1,25 @@
+{
+  "name": "marginalia",
+  "version": "1.0.0",
+  "repository": "jxe/marginalia",
+  "description": "Runs codeblocks on the page and shows their output",
+  "main": "index.js",
+  "devDependencies": {
+    "browserify": "^13.1.1",
+    "uglify-js": "",
+    "babel-core": "^5.8.24",
+    "babel-runtime": "^5.8.24",
+    "firebase": "^3.6.1",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-object-inspector": "^0.2.1",
+    "systemjs": ""
+
+  },
+  "scripts": {
+    "prepublish": "mkdir -p dist; ( cat node_modules/systemjs/dist/system.js; browserify index.js ) > dist/marginalia.js; uglifyjs dist/marginalia.js -c -m > dist/marginalia.min.js"
+  },
+  "files": ["dist"],
+  "author": "Joe Edelman",
+  "license": "ISC"
+}
